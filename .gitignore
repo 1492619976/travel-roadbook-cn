@@ -1,0 +1,17 @@
+# 检索数据（含 xsec_token / 他人昵称 / 图片签名链，勿提交勿分发）
+d_*.json
+s_*.json
+digest.json
+tools.json
+
+# 图片缓存与生成产物
+scripts/assets/
+example/generated/
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统
+Thumbs.db
+.DS_Store

@@ -1,0 +1,368 @@
+{
+ "title": "潮汕 4天3晚 · 不走回头路（高铁+自驾）",
+ "origin": "上海（假设，可换）",
+ "dateRange": "待定（建议避开节假日，桥上会堵）",
+ "travelers": "2人（假设）",
+ "budget": null,
+ "preferences": null,
+ "routeRule": "单向贯穿：潮州→官塘→南澳(南线进/北线出)→汕头；返程汕头站，不折回",
+ "days": [
+  {
+   "day": "D1",
+   "color": "#ff8c42",
+   "pts": [
+    [
+     "潮汕站（租车）",
+     116.5563,
+     23.4657
+    ],
+    [
+     "潮州古城·牌坊街",
+     116.6335,
+     23.6618
+    ],
+    [
+     "广济桥",
+     116.6442,
+     23.664
+    ]
+   ]
+  },
+  {
+   "day": "D2",
+   "color": "#2e9e6b",
+   "pts": [
+    [
+     "官塘·牛肉火锅",
+     116.723,
+     23.632
+    ],
+    [
+     "南澳大桥 ¥96",
+     116.905,
+     23.428
+    ],
+    [
+     "长山尾灯塔",
+     116.986,
+     23.413
+    ],
+    [
+     "钱澳湾灯塔",
+     117.027,
+     23.362
+    ],
+    [
+     "云澳·三囱崖",
+     117.13,
+     23.37
+    ],
+    [
+     "青澳湾（住）",
+     117.165,
+     23.323
+    ],
+    [
+     "蛴仔澎风车山·日落",
+     117.146,
+     23.29
+    ]
+   ]
+  },
+  {
+   "day": "D3",
+   "color": "#2f6fed",
+   "pts": [
+    [
+     "竹栖渡湾",
+     117.112,
+     23.378
+    ],
+    [
+     "深澳·总兵府",
+     117.074,
+     23.437
+    ],
+    [
+     "雄镇关",
+     117.048,
+     23.386
+    ],
+    [
+     "后宅镇（早午餐）",
+     117.023,
+     23.425
+    ],
+    [
+     "汕头·西堤公园停车",
+     116.688,
+     23.348
+    ],
+    [
+     "小公园",
+     116.694,
+     23.352
+    ],
+    [
+     "万象城·龙眼南路（住）",
+     116.718,
+     23.357
+    ]
+   ]
+  },
+  {
+   "day": "D4",
+   "color": "#9b59d0",
+   "pts": [
+    [
+     "汕头站（还车·返程）",
+     116.757,
+     23.368
+    ]
+   ]
+  }
+ ],
+ "shops": [
+  {
+   "city": "潮州",
+   "name": "府城兴潮牛坊",
+   "price": "人均未标",
+   "blurb": "本地人私藏清单第 1 家，牛肉火锅老店",
+   "amap": "https://uri.amap.com/search?keyword=%E5%BA%9C%E5%9F%8E%E5%85%B4%E6%BD%AE%E7%89%9B%E5%9D%8A%20%E6%BD%AE%E5%B7%9E&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "潮州",
+   "name": "官塘兄弟牛肉·总店",
+   "price": "人均未标",
+   "blurb": "10 点前到肉最全、鲜牛肉丸必点；两篇笔记评价「肉嫩但不惊艳」，备选：生记官塘牛肉",
+   "amap": "https://uri.amap.com/search?keyword=%E5%AE%98%E5%A1%98%E5%85%84%E5%BC%9F%E7%89%9B%E8%82%89%20%E6%BD%AE%E5%B7%9E&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "潮州",
+   "name": "府城雷记卤鹅",
+   "price": "人均未标",
+   "blurb": "潮州卤鹅老字号，狮头鹅香浓",
+   "amap": "https://uri.amap.com/search?keyword=%E5%BA%9C%E5%9F%8E%E9%9B%B7%E8%AE%B0%E5%8D%A4%E9%B9%85%20%E6%BD%AE%E5%B7%9E&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "潮州",
+   "name": "锋记鱼生",
+   "price": "人均未标",
+   "blurb": "潮州特色鱼生，配香油豉油十小碟",
+   "amap": "https://uri.amap.com/search?keyword=%E9%94%8B%E8%AE%B0%E9%B1%BC%E7%94%9F%20%E6%BD%AE%E5%B7%9E&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "潮州",
+   "name": "潮涂记腐乳鸡翅",
+   "price": "人均未标",
+   "blurb": "腐乳腌制现炸，古城边走边吃",
+   "amap": "https://uri.amap.com/search?keyword=%E6%BD%AE%E6%B6%82%E8%AE%B0%E8%85%90%E4%B9%B3%E9%B8%A1%E7%BF%85%20%E6%BD%AE%E5%B7%9E&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "潮州",
+   "name": "潮之锐记砂锅粥",
+   "price": "人均未标",
+   "blurb": "深夜砂锅粥；同款必吃还有「阿荣砂锅粥」",
+   "amap": "https://uri.amap.com/search?keyword=%E9%94%90%E8%AE%B0%E7%A0%82%E9%94%85%E7%B2%A5%20%E6%BD%AE%E5%B7%9E%20%E6%BD%AE%E5%B7%9E&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "南澳",
+   "name": "浩利食店",
+   "price": "人均 40+",
+   "blurb": "苍蝇馆子，千字攻略作者「南澳吃的最好吃的一顿」",
+   "amap": "https://uri.amap.com/search?keyword=%E6%B5%A9%E5%88%A9%E9%A3%9F%E5%BA%97%20%E5%8D%97%E6%BE%B3%20%E5%8D%97%E6%BE%B3&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "南澳",
+   "name": "黄记沙爹面",
+   "price": "人均 30+",
+   "blurb": "海鲜沙爹面入味，比厦门的好吃（笔记原话）",
+   "amap": "https://uri.amap.com/search?keyword=%E9%BB%84%E8%AE%B0%E6%B2%99%E5%97%B2%E9%9D%A2%20%E5%8D%97%E6%BE%B3%20%E5%8D%97%E6%BE%B3&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "南澳",
+   "name": "然记糖水铺（后宅总店）",
+   "price": "人均 20",
+   "blurb": "岛上甜品补给，绿豆冰沙同款",
+   "amap": "https://uri.amap.com/search?keyword=%E7%84%B6%E8%AE%B0%E7%B3%96%E6%B0%B4%E9%93%BA%20%E5%8D%97%E6%BE%B3%20%E5%8D%97%E6%BE%B3&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "南澳",
+   "name": "然孖生腌·本港海鲜",
+   "price": "人均未标",
+   "blurb": "本港生腌，胆大者冲",
+   "amap": "https://uri.amap.com/search?keyword=%E7%84%B6%E5%AD%96%E7%94%9F%E8%85%8C%20%E5%8D%97%E6%BE%B3%20%E5%8D%97%E6%BE%B3&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "南澳",
+   "name": "老牌·海鲜家烧·沙嗲面",
+   "price": "人均未标",
+   "blurb": "后宅镇正餐备选，出岛前顺路",
+   "amap": "https://uri.amap.com/search?keyword=%E8%80%81%E7%89%8C%E6%B5%B7%E9%B2%9C%E5%AE%B6%E7%83%A7%E6%B2%99%E5%97%B2%E9%9D%A2%20%E5%8D%97%E6%BE%B3%20%E5%8D%97%E6%BE%B3&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "南澳",
+   "name": "兴兴反沙",
+   "price": "15 元/份",
+   "blurb": "反沙芋头好吃但量小价高（笔记吐槽点）",
+   "amap": "https://uri.amap.com/search?keyword=%E5%85%B4%E5%85%B4%E5%8F%8D%E6%B2%99%20%E5%8D%97%E6%BE%B3%20%E5%8D%97%E6%BE%B3&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "五洲牛肉馆",
+   "price": "人均未标",
+   "blurb": "12 顿测评第一站「二刷挚爱，11 点到店包场，现切牛肉新鲜到极致」",
+   "amap": "https://uri.amap.com/search?keyword=%E4%BA%94%E6%B4%B2%E7%89%9B%E8%82%89%E9%A6%86%20%E6%B1%95%E5%A4%B4%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "杏花吴记牛肉火锅",
+   "price": "人均 120",
+   "blurb": "20 家店清单里的必打卡牛肉火锅（要排队，错峰）",
+   "amap": "https://uri.amap.com/search?keyword=%E6%9D%8F%E8%8A%B1%E5%90%B4%E8%AE%B0%E7%89%9B%E8%82%89%E7%81%AB%E9%94%85%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "瑞娇嫲嫲生腌",
+   "price": "人均 50",
+   "blurb": "生蚝自带海水清甜、膏蟹顶级；白粥配生腌",
+   "amap": "https://uri.amap.com/search?keyword=%E7%91%9E%E5%A8%87%E5%AB%B2%E5%AB%B2%20%E6%B1%95%E5%A4%B4%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "金砂阿洲鱼册店",
+   "price": "人均未标",
+   "blurb": "鱼册 Q 弹圈粉，芦鳗蘸酸梅酱鲜到眯眼",
+   "amap": "https://uri.amap.com/search?keyword=%E9%87%91%E7%A0%82%E9%98%BF%E6%B4%B2%E9%B1%BC%E5%86%8C%E5%BA%97%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "双生不夜粥",
+   "price": "人均未标",
+   "blurb": "深夜食堂，22 点后去不用排队；酸菜东星斑「天花板」",
+   "amap": "https://uri.amap.com/search?keyword=%E5%8F%8C%E7%94%9F%E4%B8%8D%E5%A4%9C%E7%B2%A5%20%E6%B1%95%E5%A4%B4%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "龙香酒家",
+   "price": "人均未标",
+   "blurb": "鸽吞翅、鹅头、鱼头羹招牌",
+   "amap": "https://uri.amap.com/search?keyword=%E9%BE%99%E9%A6%99%E9%85%92%E5%AE%B6%20%E6%B1%95%E5%A4%B4%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "阿群甘草水果",
+   "price": "人均 30",
+   "blurb": "甘草梅粉腌水果，饭后解腻神器",
+   "amap": "https://uri.amap.com/search?keyword=%E9%98%BF%E7%BE%A4%E7%94%98%E8%8D%89%E6%B0%B4%E6%9E%9C%20%E6%B1%95%E5%A4%B4%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "老牌福记加浓豆浆",
+   "price": "人均 15",
+   "blurb": "早餐豆浆 + 油条，加姜薯更地道",
+   "amap": "https://uri.amap.com/search?keyword=%E7%A6%8F%E8%AE%B0%E5%8A%A0%E6%B5%93%E8%B1%86%E6%B5%86%20%E6%B1%95%E5%A4%B4%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "陶家功夫卤鹅",
+   "price": "人均 30",
+   "blurb": "汕头卤鹅代表，斩盘配白饭",
+   "amap": "https://uri.amap.com/search?keyword=%E9%99%B6%E5%AE%B6%E5%8A%9F%E5%A4%AB%E5%8D%A4%E9%B9%85%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "小吴肠粉",
+   "price": "人均 10",
+   "blurb": "评价两极：一篇力荐一篇失望，人多需排队，抱着平常心",
+   "amap": "https://uri.amap.com/search?keyword=%E5%B0%8F%E5%90%B4%E8%82%A0%E7%B2%89%20%E6%B1%95%E5%A4%B4%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "city": "汕头",
+   "name": "蔡大胆牛肉海鲜捞面",
+   "price": "人均 25",
+   "blurb": "龙眼南路夜宵街，捞面加海鲜双拼",
+   "amap": "https://uri.amap.com/search?keyword=%E8%94%A1%E5%A4%A7%E8%83%86%E7%89%9B%E8%82%89%E6%B5%B7%E9%B2%9C%E6%8D%9E%E9%9D%A2%20%E6%B1%95%E5%A4%B4&src=chaoshan_roadbook",
+   "note": null
+  }
+ ],
+ "scenic": [
+  {
+   "name": "广济桥 · 过河拆桥 + 灯光秀",
+   "price": "¥20 上桥 / 灯光秀岸边免费",
+   "blurb": "17:30 蹲「过河拆桥」，20:00 灯光秀（周五—周日加 21:30 场）；滨江长廊拍全景机位",
+   "amap": "https://uri.amap.com/search?keyword=%E5%B9%BF%E6%B5%8E%E6%A1%A5%20%E6%BD%AE%E5%B7%9E%20&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "name": "开元寺",
+   "price": "免费",
+   "blurb": "唐代古刹，屋顶嵌瓷；避开 12:00–13:00 午休闭馆",
+   "amap": "https://uri.amap.com/search?keyword=%E5%BC%80%E5%85%83%E5%AF%BA%20%E6%BD%AE%E5%B7%9E%20&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "name": "长山尾灯塔",
+   "price": "停车 ¥10",
+   "blurb": "红塔与南澳大桥同框，日落最佳",
+   "amap": "https://uri.amap.com/search?keyword=%E9%95%BF%E5%B1%B1%E5%B0%BE%E7%81%AF%E5%A1%94%20%E5%8D%97%E6%BE%B3%20&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "name": "钱澳湾灯塔",
+   "price": "路边停车",
+   "blurb": "米白灯塔立在海边栈桥上，电影感",
+   "amap": "https://uri.amap.com/search?keyword=%E9%92%B1%E6%BE%B3%E6%B9%BE%E7%81%AF%E5%A1%94%20%E5%8D%97%E6%BE%B3%20&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "name": "蛴仔澎风车山",
+   "price": "导航「19 号风车」",
+   "blurb": "开车上山看海岸线全貌，日落备选地人少",
+   "amap": "https://uri.amap.com/search?keyword=%E8%9B%B4%E4%BB%94%E6%BE%8E%20%E5%8D%97%E6%BE%B3%20&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "name": "彩虹码头",
+   "price": "免费",
+   "blurb": "日落前海面彩色、日落时金黄",
+   "amap": "https://uri.amap.com/search?keyword=%E5%BD%A9%E8%99%B9%E7%A0%81%E5%A4%B4%20%E5%8D%97%E6%BE%B3%20&src=chaoshan_roadbook",
+   "note": null
+  },
+  {
+   "name": "青澳湾 · 自然之门",
+   "price": "免费",
+   "blurb": "住岛上清晨下楼看日出，北回归线标志顺路打卡",
+   "amap": "https://uri.amap.com/search?keyword=%E9%9D%92%E6%BE%B3%E6%B9%BE%20%E5%8D%97%E6%BE%B3%20&src=chaoshan_roadbook",
+   "note": null
+  }
+ ],
+ "notes": {},
+ "meta": {
+  "generated": "2026-10-10",
+  "source": "--no-images 示例模式：未检索、未嵌图、笔记链接已脱敏",
+  "caveat": "价格/班次/场次为笔记口径，出行前 12306/官方二次确认"
+ }
+}
