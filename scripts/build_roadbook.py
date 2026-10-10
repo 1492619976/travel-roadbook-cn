@@ -14,6 +14,7 @@
 """
 import argparse
 import base64
+import subprocess
 import io
 import json
 import os
@@ -36,6 +37,8 @@ try:
     HAS_PIL = True
 except ImportError:
     HAS_PIL = False
+
+EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
 parser = argparse.ArgumentParser(description="潮汕路书生成器")
 parser.add_argument("--no-images", action="store_true",
@@ -257,6 +260,99 @@ DAYS_MAP = [
 chain = [[lat, lng] for d in DAYS_MAP for name, lng, lat in d["pts"]]
 MAPDATA_JSON = json.dumps({"days": DAYS_MAP, "chain": chain}, ensure_ascii=False)
 
+# ---------- 5.5 静态高清地图（仅打印/PDF 用；HTML 屏幕端仍是交互地图） ----------
+MAP_ONLY_HTML = """<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="leaflet.css">
+<style>
+html,body{margin:0;padding:0;height:100%;overflow:hidden;background:#eef}
+#map{position:absolute;inset:0}
+.legend{position:absolute;z-index:500;top:14px;right:14px;background:rgba(255,255,255,.94);
+  border-radius:12px;padding:12px 16px;font:15px/2 "Microsoft YaHei",sans-serif;
+  box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.legend span{display:flex;align-items:center;gap:8px}
+.dot{width:15px;height:15px;border-radius:50%;display:inline-block}
+</style></head><body>
+<div id="map"></div>
+<div class="legend">
+  <span><i class="dot" style="background:#ff8c42"></i>D1 潮州古城</span>
+  <span><i class="dot" style="background:#2e9e6b"></i>D2 南线进岛</span>
+  <span><i class="dot" style="background:#2f6fed"></i>D3 北线出岛→汕头</span>
+  <span><i class="dot" style="background:#9b59d0"></i>D4 返程</span>
+</div>
+<script src="leaflet.js"></script>
+<script>
+var DATA = __MAPDATA__;
+var map = L.map('map', {zoomControl: false, scrollWheelZoom: false, attributionControl: true});
+L.tileLayer('https://wprd0{s}.is.autonavi.com/appmaptile?x={x}&y={y}&z={z}&lang=zh_cn&size=1&scl=1&style=8', {
+  subdomains: ['1','2','3','4'], maxZoom: 18, attribution: '高德瓦片'
+}).addTo(map);
+var seq = 0;
+DATA.days.forEach(function(d){
+  var line = d.pts.map(function(p){ return [p[2], p[1]]; });
+  L.polyline(line, {color: d.color, weight: 7, opacity: .9}).addTo(map);
+  d.pts.forEach(function(p){
+    seq++;
+    L.circleMarker([p[2], p[1]], {radius: 17, color: '#fff', weight: 4, fillColor: d.color, fillOpacity: 1})
+      .addTo(map).bindTooltip(String(seq), {permanent: true, direction: 'center', className: 'num-tip'});
+  });
+});
+map.fitBounds(L.latLngBounds(DATA.chain).pad(0.07));
+document.head.insertAdjacentHTML('beforeend',
+  '<style>.num-tip{background:none;border:none;box-shadow:none;color:#fff;font-weight:800;font-size:16px;padding:0}'
+  + '.leaflet-control-attribution{font-size:13px}</style>');
+</script></body></html>
+"""
+
+STATIC_MAP_B64 = ""
+MAPMODE = "no-static"
+try:
+    tmp_html = os.path.join(THIRD_PARTY, "_map_static.html")
+    with open(tmp_html, "w", encoding="utf-8") as f:
+        f.write(MAP_ONLY_HTML.replace("__MAPDATA__", MAPDATA_JSON))
+    png_path = os.path.join(THIRD_PARTY, "_map_static.png")
+    if os.path.exists(png_path):
+        os.remove(png_path)
+    subprocess.run([EDGE, "--headless=new", "--disable-gpu",
+                    "--window-size=2000,1400", "--virtual-time-budget=30000",
+                    f"--screenshot={png_path}", tmp_html],
+                   capture_output=True, timeout=180)
+    if os.path.exists(png_path) and os.path.getsize(png_path) > 50000:
+        if HAS_PIL:
+            im = Image.open(png_path).convert("RGB")
+            buf = io.BytesIO()
+            im.save(buf, "JPEG", quality=88)
+            data = buf.getvalue()
+        else:
+            data = open(png_path, "rb").read()
+        STATIC_MAP_B64 = "data:image/jpeg;base64," + base64.b64encode(data).decode("ascii")
+        MAPMODE = "has-static"
+        print("static map OK:", len(data) // 1024, "KB")
+    else:
+        print("static map FAILED: screenshot missing/too small")
+    os.remove(tmp_html)
+except Exception as e:
+    print("static map FAILED:", e)
+
+MAP_PRINT_DIV = (f'<div id="map-print"><img src="{STATIC_MAP_B64}" alt="路线图（高清印刷版）"></div>'
+                 if STATIC_MAP_B64 else "")
+
+# ---------- 5.6 笔记索引附录（全部信息源，HTML/PDF 双端可溯） ----------
+if NOTES:
+    rows = []
+    for i, n in enumerate(NOTES.values(), 1):
+        rows.append(
+            f'<tr><td>{i}</td><td>{n["title"]}</td><td>{n["nickname"]}</td><td>{n["likes"]}</td>'
+            f'<td class="mono">{n["note_id"]}</td>'
+            f'<td><a href="{n["url"]}" target="_blank">打开原文</a></td></tr>')
+    NOTES_APPENDIX = (
+        '<h2>📎 笔记索引<span class="en">全部信息源 · 链接带 xsec_token 有时效，过期后请在小红书 App 内搜索笔记标题或 note_id</span></h2>'
+        '<table class="notes-tbl"><tr><th>#</th><th>笔记标题</th><th>作者</th><th>赞</th><th>note_id</th><th>原文</th></tr>'
+        + "".join(rows) + '</table>')
+else:
+    NOTES_APPENDIX = ""
+
+
 # ---------- 6. HTML 模板 ----------
 HTML = """<!DOCTYPE html>
 <html lang="zh-CN">
@@ -286,6 +382,10 @@ h2{font-size:22px;margin:38px 0 14px;padding-left:12px;border-left:5px solid var
 h2 .en{font-size:12px;color:#9aa5ab;font-weight:400;margin-left:8px}
 #map{height:480px;border-radius:14px;border:1px solid var(--line);z-index:1}
 .map-note{font-size:12px;color:#8a949a;margin-top:8px}
+#map-print{display:none}
+#map-print img{width:100%;border-radius:14px;border:1px solid var(--line)}
+.notes-tbl th,.notes-tbl td{font-size:12px;padding:6px 8px}
+.notes-tbl .mono{font-family:Consolas,monospace;font-size:11.5px}
 .legend{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0 4px;font-size:13px}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .dot{width:12px;height:12px;border-radius:50%;display:inline-block}
@@ -344,10 +444,12 @@ td.r{text-align:right;font-variant-numeric:tabular-nums}
   .tl-item,tr{break-inside:avoid;page-break-inside:avoid}
   h2,h3,.city-h{break-after:avoid;page-break-after:avoid}
   body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body.has-static #map{display:none!important}
+  body.has-static #map-print{display:block}
 }
 </style>
 </head>
-<body>
+<body class="__MAPMODE__">
 <header>
   <h1>潮汕 4 天 3 晚 · 不走回头路</h1>
   <div class="sub">高铁进 · 落地自驾 · 单向贯穿：潮州 → 南澳（南线进岛 / 北线出岛）→ 汕头 → 返程</div>
@@ -372,6 +474,7 @@ td.r{text-align:right;font-variant-numeric:tabular-nums}
   <span><i class="dot" style="background:#9b59d0"></i>D4 返程</span>
 </div>
 <div id="map"></div>
+__MAP_PRINT_DIV__
 <div class="map-note">底图（高德瓦片）加载需联网；Leaflet 已内嵌本文件。__IMG_NOTE__南澳岛内「南线进、北线出」形成完整环线，桥只在进岛走一次。</div>
 
 <h2>📅 每日节奏<span class="en">一天一个主题，跨城日主动减量</span></h2>
@@ -428,6 +531,8 @@ __SCENIC__
 <div class="tl-item"><div class="tl-time">🎫 门票</div><div class="tl-body">广济桥 ¥20（16:00 停止上桥，17:30 看拆桥）、广济楼登楼 ¥30；灯光秀场次：<b>工作日 20:00 一场，周五—周日 20:00 / 21:30 两场</b>（以现场公告为准）</div></div>
 <div class="tl-item"><div class="tl-time">🌦️ 天气</div><div class="tl-body">出发前 3 天看台风/降雨预报——南澳大桥大风会管制，海岛行程留 Plan B（雨天改为潮州+汕头双城，跳过南澳）</div></div>
 </div>
+
+__NOTES_APPENDIX__
 
 <div class="foot-note">
 <b>数据说明</b>
@@ -552,6 +657,9 @@ html = (HTML
         .replace("__IMG_NOTE__", IMG_NOTE)
         .replace("__IMG_FOOT__", IMG_FOOT)
         .replace("__INTAKE_LINE__", INTAKE_LINE)
+        .replace("__MAPMODE__", MAPMODE)
+        .replace("__MAP_PRINT_DIV__", MAP_PRINT_DIV)
+        .replace("__NOTES_APPENDIX__", NOTES_APPENDIX)
         .replace("__LEAFLET_CSS__", leaflet_css)
         .replace("__LEAFLET_JS__", leaflet_js))
 

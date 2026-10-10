@@ -76,3 +76,5 @@ msedge --headless=new --no-pdf-header-footer --virtual-time-budget=30000 \
 | 图片下载失败 | 带 UA + Referer `https://www.xiaohongshu.com/`；search 偶发超时换短词重试 |
 | 无头截图瓦片灰块 | 多为截图抢跑，加大 `--virtual-time-budget` 复截 |
 | 微信里 html 打不开 | 手机微信不预览 html 附件，转 PDF 发 |
+| PDF 地图模糊 | 瓦片 256px 位图打印仅 ~100DPI——用脚本内置的静态高清地图（2000px 截图内嵌，print 时自动替换交互地图） |
+| PDF 里链接点不动 | Edge print-to-pdf 会把 <a> 转 PDF 超链接注释（用 PyMuPDF get_links 验证）；笔记索引附录同时给 note_id 供 App 内搜索兜底 |
