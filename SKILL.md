@@ -1,5 +1,5 @@
 ---
-name: travel-roadbook-c
+name: travel-roadbook-cn
 description: >
   国内旅行路书生成 Skill：小红书 MCP 检索高赞游记 + 高德 MCP 核对坐标/路线 + 免 Key 高德瓦片，
   产出单文件交互式路书 HTML（Leafet 地图、店铺卡、避雷、预算），可一键转 PDF 微信分发。
@@ -89,7 +89,7 @@ msedge --headless=new --no-pdf-header-footer --virtual-time-budget=30000 \
 ## 安装为 Agent Skill
 
 ```bash
-git clone https://gitee.com/<you>/travel-roadbook-c.git ~/.agents/skills/travel-roadbook-c
+git clone https://gitee.com/<you>/travel-roadbook-cn.git ~/.agents/skills/travel-roadbook-cn
 # 或复制本目录到 ~/.agents/skills/（ZCode 亦可用 ~/.zcode/skills/，技能名须 ASCII）
 ```
 装完**新开会话**生效。宿主 Agent 按「工作流」章节编排，本仓库脚本即工具箱。

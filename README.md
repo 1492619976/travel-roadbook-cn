@@ -1,4 +1,4 @@
-# travel-roadbook-c · 国内旅行路书 Skill
+# travel-roadbook-cn · 国内旅行路书 Skill
 
 > **小红书 MCP 检索 × 高德地图免 Key 瓦片 × 单文件交互式路书**——面向国内自由行的 Agent Skill。
 > 把「查小红书攻略 → 问卷收需求 → 整理行程 → 出路书 HTML/PDF」固化成可复现流水线，零付费 API 依赖。
@@ -21,7 +21,7 @@
 
 ```bash
 # 作为 Agent Skill（ZCode / Claude Code / Cursor 等支持 skills 目录的宿主）
-git clone https://gitee.com/paul-sun/travel-roadbook-c.git ~/.agents/skills/travel-roadbook-c
+git clone https://gitee.com/paul-sun/travel-roadbook-cn.git ~/.agents/skills/travel-roadbook-cn
 
 # 依赖
 pip install pillow
@@ -44,7 +44,7 @@ pip install pillow
 ## 📁 目录
 
 ```
-travel-roadbook-c/
+travel-roadbook-cn/
 ├── SKILL.md                # ← Skill 主体：工作流/规范/红线（宿主 Agent 读这个）
 ├── INTAKE.md               # 前置问卷模板（6 要素）
 ├── scripts/
@@ -95,4 +95,4 @@ msedge --headless=new --no-pdf-header-footer --virtual-time-budget=30000 \
 
 # English
 
-**travel-roadbook-c** — an agent skill for domestic-China travel roadbooks. Pipeline: intake questionnaire (dates/budget/preferences) → Xiaohongshu notes retrieval via a local [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) service → structured `tripData.json` → single-file interactive HTML roadbook (Leaflet + keyless AMap tiles, shop cards, navigation links, budget table) → PDF for WeChat sharing. Zero paid-API dependencies. Ships a real 4-day Chaoshan trip as the worked example (image-free version for copyright reasons). See [SKILL.md](SKILL.md), [docs/TOOLCHAIN.md](docs/TOOLCHAIN.md), [docs/PIPELINE.md](docs/PIPELINE.md).
+**travel-roadbook-cn** — an agent skill for domestic-China travel roadbooks. Pipeline: intake questionnaire (dates/budget/preferences) → Xiaohongshu notes retrieval via a local [xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) service → structured `tripData.json` → single-file interactive HTML roadbook (Leaflet + keyless AMap tiles, shop cards, navigation links, budget table) → PDF for WeChat sharing. Zero paid-API dependencies. Ships a real 4-day Chaoshan trip as the worked example (image-free version for copyright reasons). See [SKILL.md](SKILL.md), [docs/TOOLCHAIN.md](docs/TOOLCHAIN.md), [docs/PIPELINE.md](docs/PIPELINE.md).
