@@ -190,7 +190,7 @@ def card_img(img_key, name):
         return f'<div class="noimg">📷 占位图 · 完整模式嵌入小红书实拍<br><b>{name}</b></div>'
     img = IMG.get(img_key, "")
     if img:
-        return f'<img src="{img}" alt="{name}" loading="lazy">'
+        return f'<img src="{img}" alt="{name}">'
     return '<div class="noimg">图源失效</div>'
 
 def shop_card(city, name, price, blurb, img_key, amap_kw, note_key):
@@ -335,9 +335,15 @@ td.r{text-align:right;font-variant-numeric:tabular-nums}
   .tl-item{flex-direction:column;gap:2px}
   .tl-time{flex:none}
 }
+@page{size:A4;margin:12mm 10mm}
 @media print{
   header{background:var(--sea-deep)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   #map{height:360px}
+  /* 卡片/时间线/警示块整体不可跨页切断 */
+  .card,.timeline,.day-mini,.warn,.chip{break-inside:avoid;page-break-inside:avoid}
+  .tl-item,tr{break-inside:avoid;page-break-inside:avoid}
+  h2,h3,.city-h{break-after:avoid;page-break-after:avoid}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>

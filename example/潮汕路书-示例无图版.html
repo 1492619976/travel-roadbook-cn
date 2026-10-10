@@ -736,9 +736,15 @@ td.r{text-align:right;font-variant-numeric:tabular-nums}
   .tl-item{flex-direction:column;gap:2px}
   .tl-time{flex:none}
 }
+@page{size:A4;margin:12mm 10mm}
 @media print{
   header{background:var(--sea-deep)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   #map{height:360px}
+  /* 卡片/时间线/警示块整体不可跨页切断 */
+  .card,.timeline,.day-mini,.warn,.chip{break-inside:avoid;page-break-inside:avoid}
+  .tl-item,tr{break-inside:avoid;page-break-inside:avoid}
+  h2,h3,.city-h{break-after:avoid;page-break-after:avoid}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
